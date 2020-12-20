@@ -1,6 +1,6 @@
 package student;
 
-class Task {
+class Task implements Data {
 
     private final String name;
     private final int points;
@@ -10,7 +10,8 @@ class Task {
         this.points = points;
     }
 
-    int getPoints() {
+    @Override
+    public int getPoints() {
         return points;
     }
 }

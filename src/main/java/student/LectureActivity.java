@@ -1,6 +1,6 @@
 package student;
 
-class LectureActivity {
+class LectureActivity implements Data {
 
     private final String name;
     private final int points;
@@ -10,7 +10,8 @@ class LectureActivity {
         this.points = points;
     }
 
-    int getPoints() {
+    @Override
+    public int getPoints() {
         return points;
     }
 }
