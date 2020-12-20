@@ -27,4 +27,16 @@ class PreAcademyStudent {
         return activities.stream().mapToInt(LectureActivity::getPoints).sum();
     }
 
+    void addQuiz(Quiz quiz) {
+        quizzes.add(quiz);
+    }
+
+    void addTask(Task task) {
+        tasks.add(task);
+    }
+
+    void addLectureActivity(LectureActivity lectureActivity) {
+        activities.add(lectureActivity);
+    }
+
 }
