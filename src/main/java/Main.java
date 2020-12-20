@@ -14,7 +14,7 @@ public class Main {
         print(students);
 
         out.println("list sorted ascending by quizzes points ");
-        students.sort(comparing(PreAcademyStudent::getQuizzesPoints));
+        students.sort(comparingInt(PreAcademyStudent::getQuizzesPoints));
         print(students);
 
 
@@ -24,7 +24,7 @@ public class Main {
 
 
         out.println("list sorted ascending by tasks points ");
-        students.sort(comparing(PreAcademyStudent::getTasksPoints));
+        students.sort(comparingInt(PreAcademyStudent::getTasksPoints));
         print(students);
 
 
@@ -33,7 +33,7 @@ public class Main {
         print(students);
 
         out.println("list sorted ascending by lectures activities points ");
-        students.sort(comparing(PreAcademyStudent::getLectureActivityPoints));
+        students.sort(comparingInt(PreAcademyStudent::getLectureActivityPoints));
         print(students);
 
 
@@ -43,12 +43,12 @@ public class Main {
 
 
         out.println("list sorted ascending by total points ");
-        students.sort(comparing(PreAcademyStudent::getTotalPoints));
+        students.sort(naturalOrder());
         print(students);
 
 
         out.println("list sorted descending by total points ");
-        students.sort(comparingInt(PreAcademyStudent::getTotalPoints).reversed());
+        students.sort(reverseOrder());
         print(students);
     }
 
