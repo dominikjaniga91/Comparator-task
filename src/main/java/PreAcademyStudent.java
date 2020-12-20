@@ -15,4 +15,16 @@ class PreAcademyStudent {
         this.surname = surname;
     }
 
+    int getQuizzesPoints() {
+        return quizzes.stream().mapToInt(Quiz::getPoints).sum();
+    }
+
+    int getTasksPoints() {
+        return tasks.stream().mapToInt(Task::getPoints).sum();
+    }
+
+    int getLectureActivityPoints() {
+        return activities.stream().mapToInt(LectureActivity::getPoints).sum();
+    }
+
 }
