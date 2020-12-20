@@ -8,29 +8,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<PreAcademyStudent> students = DataCreator.create();
+        List<PreAcademyStudent> students = DataLoader.load();
 
 
         out.println("unsorted list");
         print(students);
 
         out.println("list sorted ascending by quizzes points ");
-        students.sort(comparingInt(PreAcademyStudent::getQuizzesPoints));
+        students.sort(comparingInt(PreAcademyStudent::getQuizPoints));
         print(students);
 
 
         out.println("list sorted descending by quizzes points ");
-        students.sort(comparingInt(PreAcademyStudent::getQuizzesPoints).reversed());
+        students.sort(comparingInt(PreAcademyStudent::getQuizPoints).reversed());
         print(students);
 
 
         out.println("list sorted ascending by tasks points ");
-        students.sort(comparingInt(PreAcademyStudent::getTasksPoints));
+        students.sort(comparingInt(PreAcademyStudent::getTaskPoints));
         print(students);
 
 
         out.println("list sorted descending by tasks points ");
-        students.sort(comparingInt(PreAcademyStudent::getTasksPoints).reversed());
+        students.sort(comparingInt(PreAcademyStudent::getTaskPoints).reversed());
         print(students);
 
         out.println("list sorted ascending by lectures activities points ");
