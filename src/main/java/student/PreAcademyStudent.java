@@ -17,15 +17,15 @@ class PreAcademyStudent implements Comparable<PreAcademyStudent> {
     }
 
     int getQuizzesPoints() {
-        return quizzes.stream().mapToInt(Quiz::getPoints).sum();
+        return getPoints(quizzes);
     }
 
     int getTasksPoints() {
-        return tasks.stream().mapToInt(Task::getPoints).sum();
+        return getPoints(tasks);
     }
 
     int getLectureActivityPoints() {
-        return activities.stream().mapToInt(LectureActivity::getPoints).sum();
+        return getPoints(activities);
     }
 
     void addQuiz(Quiz quiz) {
@@ -40,10 +40,14 @@ class PreAcademyStudent implements Comparable<PreAcademyStudent> {
         activities.add(lectureActivity);
     }
 
-    int getTotalPoints() {
-        return getQuizzesPoints() +
-                getTasksPoints() +
-                getLectureActivityPoints();
+    <E extends Data> int getPoints(List<E> subjects) {
+        return subjects.stream().mapToInt(Data::getPoints).sum();
+    }
+
+    private int getTotalPoints() {
+        return getPoints(quizzes) +
+                getPoints(tasks) +
+                getPoints(activities);
     }
 
     @Override
