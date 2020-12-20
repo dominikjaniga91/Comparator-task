@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class PreAcademyStudent {
+class PreAcademyStudent implements Comparable<PreAcademyStudent> {
 
     private final String name;
     private final String surname;
@@ -38,11 +38,16 @@ class PreAcademyStudent {
         activities.add(lectureActivity);
     }
 
-    int getTotalPoints() {
+    private int getTotalPoints() {
         return getQuizzesPoints() +
                 getTasksPoints() +
                 getLectureActivityPoints();
     }
 
-
+    @Override
+    public int compareTo(PreAcademyStudent preAcademyStudent) {
+        int that = getTotalPoints();
+        int another = preAcademyStudent.getTotalPoints();
+        return Integer.compare(that, another);
+    }
 }
