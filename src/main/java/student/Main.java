@@ -15,31 +15,31 @@ public class Main {
         print(students);
 
         out.println("list sorted ascending by quizzes points ");
-        students.sort(comparingInt(PreAcademyStudent::getQuizPoints));
+        students.sort(comparingInt(PreAcademyStudent::quizPoints));
         print(students);
 
 
         out.println("list sorted descending by quizzes points ");
-        students.sort(comparingInt(PreAcademyStudent::getQuizPoints).reversed());
+        students.sort(comparingInt(PreAcademyStudent::quizPoints).reversed());
         print(students);
 
 
         out.println("list sorted ascending by tasks points ");
-        students.sort(comparingInt(PreAcademyStudent::getTaskPoints));
+        students.sort(comparingInt(PreAcademyStudent::taskPoints));
         print(students);
 
 
         out.println("list sorted descending by tasks points ");
-        students.sort(comparingInt(PreAcademyStudent::getTaskPoints).reversed());
+        students.sort(comparingInt(PreAcademyStudent::taskPoints).reversed());
         print(students);
 
         out.println("list sorted ascending by lectures activities points ");
-        students.sort(comparingInt(PreAcademyStudent::getLectureActivityPoints));
+        students.sort(comparingInt(PreAcademyStudent::activityPoints));
         print(students);
 
 
         out.println("list sorted descending by lectures activities points ");
-        students.sort(comparingInt(PreAcademyStudent::getLectureActivityPoints).reversed());
+        students.sort(comparingInt(PreAcademyStudent::activityPoints).reversed());
         print(students);
 
 
