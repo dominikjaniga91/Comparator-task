@@ -38,7 +38,7 @@ class PreAcademyStudent implements Comparable<PreAcademyStudent> {
         activities.add(lectureActivity);
     }
 
-    private int getTotalPoints() {
+    int getTotalPoints() {
         return getQuizzesPoints() +
                 getTasksPoints() +
                 getLectureActivityPoints();
@@ -53,6 +53,6 @@ class PreAcademyStudent implements Comparable<PreAcademyStudent> {
 
     @Override
     public String toString() {
-        return String.format("%s %s", name, surname);
+        return String.format("%s %s %d %d %d %d", name, surname, getQuizzesPoints(), getTasksPoints(), getLectureActivityPoints(), getTotalPoints());
     }
 }
