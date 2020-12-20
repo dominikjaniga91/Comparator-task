@@ -50,4 +50,9 @@ class PreAcademyStudent implements Comparable<PreAcademyStudent> {
         int another = preAcademyStudent.getTotalPoints();
         return Integer.compare(that, another);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", name, surname);
+    }
 }
