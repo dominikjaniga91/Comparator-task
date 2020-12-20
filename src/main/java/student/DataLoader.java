@@ -17,11 +17,11 @@ class DataLoader {
             System.out.println(ex.getMessage());
         }
 
-        return lines.stream().map(DataLoader::getPreAcademyStudent)
+        return lines.stream().map(DataLoader::createPreAcademyStudent)
                             .collect(Collectors.toList());
     }
 
-    private static PreAcademyStudent getPreAcademyStudent(String line) {
+    private static PreAcademyStudent createPreAcademyStudent(String line) {
         String[] data = line.split(";");
 
         String name = data[0];
