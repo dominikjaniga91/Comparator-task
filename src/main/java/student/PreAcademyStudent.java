@@ -1,53 +1,35 @@
 package student;
 
-import java.util.ArrayList;
-import java.util.List;
-
 class PreAcademyStudent implements Comparable<PreAcademyStudent> {
 
     private final String name;
     private final String surname;
-    private final List<Quiz> quizzes = new ArrayList<>();
-    private final List<Task> tasks = new ArrayList<>();
-    private final List<LectureActivity> activities = new ArrayList<>();
+    private final int quizPoints;
+    private final int taskPoints;
+    private final int activityPoints;
 
-    PreAcademyStudent(String name, String surname) {
+    public PreAcademyStudent(String name, String surname, int quizPoints, int taskPoints, int activityPoints) {
         this.name = name;
         this.surname = surname;
+        this.quizPoints = quizPoints;
+        this.taskPoints = taskPoints;
+        this.activityPoints = activityPoints;
     }
 
-    int getQuizzesPoints() {
-        return getPoints(quizzes);
+    int getQuizPoints() {
+        return quizPoints;
     }
 
-    int getTasksPoints() {
-        return getPoints(tasks);
+    int getTaskPoints() {
+        return taskPoints;
     }
 
     int getLectureActivityPoints() {
-        return getPoints(activities);
-    }
-
-    void addQuiz(Quiz quiz) {
-        quizzes.add(quiz);
-    }
-
-    void addTask(Task task) {
-        tasks.add(task);
-    }
-
-    void addLectureActivity(LectureActivity lectureActivity) {
-        activities.add(lectureActivity);
-    }
-
-    <E extends Data> int getPoints(List<E> subjects) {
-        return subjects.stream().mapToInt(Data::getPoints).sum();
+        return activityPoints;
     }
 
     private int getTotalPoints() {
-        return getPoints(quizzes) +
-                getPoints(tasks) +
-                getPoints(activities);
+        return quizPoints + taskPoints + activityPoints;
     }
 
     @Override
@@ -59,6 +41,6 @@ class PreAcademyStudent implements Comparable<PreAcademyStudent> {
 
     @Override
     public String toString() {
-        return String.format("%s %s %d %d %d %d", name, surname, getQuizzesPoints(), getTasksPoints(), getLectureActivityPoints(), getTotalPoints());
+        return String.format("%s %s %d %d %d %d", name, surname, quizPoints, taskPoints, activityPoints, getTotalPoints());
     }
 }
