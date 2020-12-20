@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.ToIntFunction;
 
 class PreAcademyStudent {
 
@@ -38,5 +37,12 @@ class PreAcademyStudent {
     void addLectureActivity(LectureActivity lectureActivity) {
         activities.add(lectureActivity);
     }
+
+    int getTotalPoints() {
+        return getQuizzesPoints() +
+                getTasksPoints() +
+                getLectureActivityPoints();
+    }
+
 
 }
