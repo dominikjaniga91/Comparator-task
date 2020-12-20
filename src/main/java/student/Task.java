@@ -1,9 +1,11 @@
-class Quiz {
+package student;
+
+class Task {
 
     private final String name;
     private final int points;
 
-    Quiz(String name, int points) {
+    Task(String name, int points) {
         this.name = name;
         this.points = points;
     }

@@ -1,9 +1,11 @@
-class Task {
+package student;
+
+class LectureActivity {
 
     private final String name;
     private final int points;
 
-    Task(String name, int points) {
+    public LectureActivity(String name, int points) {
         this.name = name;
         this.points = points;
     }

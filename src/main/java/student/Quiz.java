@@ -1,9 +1,11 @@
-class LectureActivity {
+package student;
+
+class Quiz {
 
     private final String name;
     private final int points;
 
-    public LectureActivity(String name, int points) {
+    Quiz(String name, int points) {
         this.name = name;
         this.points = points;
     }
