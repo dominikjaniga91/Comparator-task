@@ -19,6 +19,6 @@ public record PreAcademyStudent(String name,
 
     @Override
     public String toString() {
-        return String.format("%s %s %d %d %d %d", name, surname, quizPoints, taskPoints, activityPoints, getTotalPoints());
+        return String.format("%s\t%s\t%d\t%d\t%d\t%d", name, surname, quizPoints, taskPoints, activityPoints, getTotalPoints());
     }
 }
