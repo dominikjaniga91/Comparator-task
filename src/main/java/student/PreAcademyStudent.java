@@ -1,6 +1,6 @@
 package student;
 
-record PreAcademyStudent(String name,
+public record PreAcademyStudent(String name,
                          String surname,
                          int quizPoints,
                          int taskPoints,
