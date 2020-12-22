@@ -2,7 +2,7 @@ package student.strategy;
 
 public class Selector {
 
-    public static StudentComparator select(SortingOption sorter) {
+    public static StudentComparator select(Category sorter) {
         return switch (sorter) {
                 case QUIZ -> new Quiz();
                 case TASK -> new Task();
