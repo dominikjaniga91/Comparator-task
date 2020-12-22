@@ -4,13 +4,7 @@ import student.PreAcademyStudent;
 
 import java.util.Comparator;
 
-public class DescendingDecorator implements StudentComparator {
-
-    private final StudentComparator comparator;
-
-    public DescendingDecorator(StudentComparator comparator) {
-        this.comparator = comparator;
-    }
+public record DescendingDecorator(StudentComparator comparator) implements StudentComparator {
 
     @Override
     public Comparator<PreAcademyStudent> compare() {
