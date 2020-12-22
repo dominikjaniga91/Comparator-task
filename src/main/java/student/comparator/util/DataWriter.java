@@ -1,4 +1,6 @@
-package student;
+package student.comparator.util;
+
+import student.comparator.PreAcademyStudent;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,12 +12,12 @@ import static java.nio.charset.StandardCharsets.UTF_16;
 import static java.nio.file.StandardOpenOption.APPEND;
 import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
 
-class DataWriter {
+public class DataWriter {
 
     private static final Path PATH = Path.of("sorted.txt");
     private static final String HEADER = "Name\tSurname\tQuizzes\tTasks\tActivities\tTotal\n";
 
-    static void write(List<PreAcademyStudent> students) {
+    public static void write(List<PreAcademyStudent> students) {
         List<String> lines = getStringList(students);
         writeHeader();
         try {
@@ -31,7 +33,7 @@ class DataWriter {
                 .collect(Collectors.toList());
     }
 
-    static void writeHeader() {
+    private static void writeHeader() {
         try(var writer = Files.newBufferedWriter(PATH, UTF_16, TRUNCATE_EXISTING)) {
             writer.write(HEADER);
         } catch (IOException ex) {

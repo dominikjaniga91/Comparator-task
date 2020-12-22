@@ -1,6 +1,6 @@
-package student.reader;
+package student.comparator.reader;
 
-import student.strategy.Category;
+import student.comparator.enums.Category;
 
 public class CategoryReader implements ArgumentReader<Category, String> {
 

@@ -1,6 +1,6 @@
-package student.strategy;
+package student.comparator.strategy;
 
-import student.PreAcademyStudent;
+import student.comparator.PreAcademyStudent;
 
 import java.util.Comparator;
 

@@ -1,12 +1,14 @@
-package student;
+package student.comparator.util;
 
-import student.strategy.*;
-
+import student.comparator.PreAcademyStudent;
+import student.comparator.enums.Category;
+import student.comparator.enums.Option;
+import student.comparator.strategy.*;
 import java.util.List;
 
 public class Sorter {
 
-    static void sort(List<PreAcademyStudent> list, Category category, Option sortingOption) {
+    public static void sort(List<PreAcademyStudent> list, Category category, Option sortingOption) {
 
         StudentComparator comparator = Selector.select(category);
         if (sortingOption == Option.DESCENDING) {

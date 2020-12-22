@@ -1,16 +1,19 @@
-package student;
+package student.comparator;
 
-import student.reader.CategoryReader;
-import student.reader.OptionReader;
-import student.strategy.Category;
-import student.strategy.Option;
+import student.comparator.enums.Category;
+import student.comparator.enums.Option;
+import student.comparator.reader.CategoryReader;
+import student.comparator.reader.OptionReader;
+import student.comparator.util.DataLoader;
+import student.comparator.util.DataWriter;
+import student.comparator.util.Sorter;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class Program {
 
-    void run() {
+    public void run() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("chose category: QUIZ, TASK, ACTIVITY, TOTAL");
         String categoryInput = scanner.nextLine();

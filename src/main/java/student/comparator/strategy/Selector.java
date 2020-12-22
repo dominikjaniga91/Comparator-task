@@ -1,4 +1,6 @@
-package student.strategy;
+package student.comparator.strategy;
+
+import student.comparator.enums.Category;
 
 public class Selector {
 
@@ -8,7 +10,6 @@ public class Selector {
                 case TASK -> new Task();
                 case ACTIVITY -> new LectureActivity();
                 case TOTAL -> new Total();
-                default -> throw new IllegalArgumentException();
         };
     }
 }

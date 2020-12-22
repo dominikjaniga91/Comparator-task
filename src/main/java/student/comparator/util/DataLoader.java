@@ -1,4 +1,6 @@
-package student;
+package student.comparator.util;
+
+import student.comparator.PreAcademyStudent;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,12 +9,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class DataLoader {
+public class DataLoader {
 
     private static final String FILE = "students.txt";
     private static final String WORD_SEPARATOR = ";";
 
-    static List<PreAcademyStudent> load() {
+    public static List<PreAcademyStudent> load() {
         List<String> lines = readLinesFromFile();
         return getStudentsList(lines);
     }

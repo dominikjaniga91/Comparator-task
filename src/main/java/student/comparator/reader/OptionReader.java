@@ -1,6 +1,6 @@
-package student.reader;
+package student.comparator.reader;
 
-import student.strategy.Option;
+import student.comparator.enums.Option;
 
 public class OptionReader implements ArgumentReader<Option, String> {
 

@@ -1,4 +1,4 @@
-package student;
+package student.comparator;
 
 public record PreAcademyStudent(String name,
                          String surname,

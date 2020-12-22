@@ -1,10 +1,10 @@
-package student.strategy;
+package student.comparator.strategy;
 
-import student.PreAcademyStudent;
+import student.comparator.PreAcademyStudent;
 
 import java.util.Comparator;
 
-public class Quiz implements StudentComparator {
+class Quiz implements StudentComparator {
 
     @Override
     public Comparator<PreAcademyStudent> compare() {

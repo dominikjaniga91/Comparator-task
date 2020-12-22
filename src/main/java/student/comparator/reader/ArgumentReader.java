@@ -1,4 +1,4 @@
-package student.reader;
+package student.comparator.reader;
 
 public interface ArgumentReader<T, V> {
 
