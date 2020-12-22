@@ -1,6 +1,6 @@
 package student.strategy;
 
-public enum Sorters {
+public enum SortingOption {
 
     QUIZ, TASK, ACTIVITY, TOTAL, ASCENDING, DESCENDING;
 }
