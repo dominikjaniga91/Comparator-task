@@ -7,7 +7,7 @@ import java.util.Comparator;
 class LectureActivity implements StudentComparator {
 
     @Override
-    public Comparator<PreAcademyStudent> compare() {
-       return Comparator.comparing(PreAcademyStudent::activityPoints);
+    public Comparator<PreAcademyStudent> get() {
+       return Comparator.comparingInt(PreAcademyStudent::activityPoints);
     }
 }

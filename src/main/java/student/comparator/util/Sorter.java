@@ -13,9 +13,9 @@ public class Sorter {
         StudentComparator comparator = Selector.select(category);
         if (sortingOption == Option.DESCENDING) {
             StudentComparator decorated = new DescendingDecorator(comparator);
-            list.sort(decorated.compare());
+            list.sort(decorated.get());
         } else {
-            list.sort(comparator.compare());
+            list.sort(comparator.get());
         }
     }
 }

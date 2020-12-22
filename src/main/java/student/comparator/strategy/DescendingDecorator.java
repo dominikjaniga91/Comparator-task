@@ -7,7 +7,7 @@ import java.util.Comparator;
 public record DescendingDecorator(StudentComparator comparator) implements StudentComparator {
 
     @Override
-    public Comparator<PreAcademyStudent> compare() {
-        return comparator.compare().reversed();
+    public Comparator<PreAcademyStudent> get() {
+        return comparator.get().reversed();
     }
 }

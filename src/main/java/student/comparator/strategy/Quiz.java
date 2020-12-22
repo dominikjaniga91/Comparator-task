@@ -7,7 +7,7 @@ import java.util.Comparator;
 class Quiz implements StudentComparator {
 
     @Override
-    public Comparator<PreAcademyStudent> compare() {
+    public Comparator<PreAcademyStudent> get() {
        return Comparator.comparing(PreAcademyStudent::quizPoints);
     }
 }

@@ -7,7 +7,7 @@ import java.util.Comparator;
 class Total implements StudentComparator {
 
     @Override
-    public Comparator<PreAcademyStudent> compare() {
+    public Comparator<PreAcademyStudent> get() {
         return Comparator.naturalOrder();
     }
 }
