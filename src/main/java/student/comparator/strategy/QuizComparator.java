@@ -8,6 +8,6 @@ class QuizComparator implements StudentComparator {
 
     @Override
     public Comparator<PreAcademyStudent> get() {
-       return Comparator.comparing(PreAcademyStudent::quizPoints);
+       return Comparator.comparingInt(PreAcademyStudent::quizPoints);
     }
 }

@@ -8,6 +8,6 @@ class TaskComparator implements StudentComparator {
 
     @Override
     public Comparator<PreAcademyStudent> get() {
-       return Comparator.comparing(PreAcademyStudent::taskPoints);
+       return Comparator.comparingInt(PreAcademyStudent::taskPoints);
     }
 }
