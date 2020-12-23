@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Sorter {
 
-    public static void sort(List<PreAcademyStudent> list, Category category, Option sortingOption) {
+    public void sort(List<PreAcademyStudent> list, Category category, Option sortingOption) {
 
         StudentComparator comparator = ComparatorSelector.select(category);
         if (sortingOption == Option.DESCENDING) {

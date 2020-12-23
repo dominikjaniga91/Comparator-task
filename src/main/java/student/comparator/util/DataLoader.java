@@ -13,12 +13,12 @@ public class DataLoader {
 
     private static final String WORD_SEPARATOR = ";";
 
-    public static List<PreAcademyStudent> load(String fileName) {
+    public List<PreAcademyStudent> load(String fileName) {
         List<String> lines = readLinesFromFile(fileName);
         return getStudentsList(lines);
     }
 
-    private static List<String> readLinesFromFile(String fileName) {
+    private List<String> readLinesFromFile(String fileName) {
         List<String> lines = Collections.emptyList();
         try {
             lines = Files.readAllLines(Path.of(fileName));
@@ -28,12 +28,12 @@ public class DataLoader {
         return lines;
     }
 
-    private static List<PreAcademyStudent> getStudentsList(List<String> lines) {
-        return lines.stream().map(DataLoader::createPreAcademyStudent)
+    private List<PreAcademyStudent> getStudentsList(List<String> lines) {
+        return lines.stream().map(this::createPreAcademyStudent)
                             .collect(Collectors.toList());
     }
 
-    private static PreAcademyStudent createPreAcademyStudent(String line) {
+    private PreAcademyStudent createPreAcademyStudent(String line) {
         String[] data = line.split(WORD_SEPARATOR);
 
         String name = data[0];

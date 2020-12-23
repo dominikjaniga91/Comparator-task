@@ -13,14 +13,20 @@ import java.util.Scanner;
 
 public class Program {
 
+    private final Sorter sorter = new Sorter();
+    private final DataWriter writer = new DataWriter();
+    private final DataLoader loader = new DataLoader();
+    private final CategoryReader categoryReader = new CategoryReader();
+    private final OptionReader optionReader = new OptionReader();
+
     public void run(String... args) {
 
         String fileName = args[0];
-        Category category = new CategoryReader().read(args[1]);
-        Option option = new OptionReader().read(args[2]);
-        List<PreAcademyStudent> students = DataLoader.load(fileName);
-        Sorter.sort(students, category, option);
-        DataWriter.write(students);
+        Category category = categoryReader.read(args[1]);
+        Option option = optionReader.read(args[2]);
+        List<PreAcademyStudent> students = loader.load(fileName);
+        sorter.sort(students, category, option);
+        writer.write(students);
 
     }
 }

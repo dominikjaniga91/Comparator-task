@@ -21,7 +21,7 @@ public class DataWriter {
     private static final Path PATH = Paths.get(FILE_NAME);
     private static final String HEADER = "Name\tSurname\tQuizzes\tTasks\tActivities\tTotal\n";
 
-    public static void write(List<PreAcademyStudent> students) {
+    public void write(List<PreAcademyStudent> students) {
         List<String> lines = getStringList(students);
         writeHeader();
         try {
@@ -31,13 +31,13 @@ public class DataWriter {
         }
     }
 
-    private static List<String> getStringList(List<PreAcademyStudent> students) {
+    private List<String> getStringList(List<PreAcademyStudent> students) {
         return students.stream()
                 .map(PreAcademyStudent::toString)
                 .collect(Collectors.toList());
     }
 
-    private static void writeHeader() {
+    private void writeHeader() {
         try(var writer = Files.newBufferedWriter(PATH, UTF_8, CREATE_NEW)) {
             writer.write(HEADER);
         } catch (IOException ex) {
