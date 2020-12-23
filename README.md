@@ -8,8 +8,14 @@ The application takes three starting arguments:
 2. Data to sort (quiz, task, activity, total)
 3. Sorting option: descending or ascending
 
-For instance: students.csv quiz descending
+When user will provide only a file then program will sort data by total points, ascending
 
-file name format: sorted_students_23-12-2020_17:00:15.csv
+For instance: 
+
+students.csv quiz descending - sort list by quiz points, descending
+students.csv task - sort list by task points, ascending
+students.csv - sort list by total points, ascending
+
+sorted file name format: sorted_students_23-12-2020_17:00:15.csv
 
 TODO: write a tests
