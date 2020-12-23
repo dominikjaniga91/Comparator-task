@@ -6,15 +6,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.nio.file.StandardOpenOption.*;
+import static java.nio.file.StandardOpenOption.APPEND;
+import static java.nio.file.StandardOpenOption.CREATE_NEW;
 
 public class DataWriter {
 
-    private static final String FILE_NAME = "sorted_students_" + LocalDateTime.now() + ".csv";
+    private static final DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH:mm:ss");
+    private static final String FILE_NAME = "sorted_students_" + LocalDateTime.now().format(format) + ".csv";
     private static final Path PATH = Paths.get(FILE_NAME);
     private static final String HEADER = "Name\tSurname\tQuizzes\tTasks\tActivities\tTotal\n";
 
