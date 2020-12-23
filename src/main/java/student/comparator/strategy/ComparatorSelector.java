@@ -7,11 +7,11 @@ public class ComparatorSelector {
     /**
      * Chose comparator base on the provided category
      *
-     * @param sorter the category of data
+     * @param category the category of data
      * @return a comparator object for specific data
      */
-    public static StudentComparator select(Category sorter) {
-        return switch (sorter) {
+    public static StudentComparator select(Category category) {
+        return switch (category) {
                 case QUIZ -> new QuizComparator();
                 case TASK -> new TaskComparator();
                 case ACTIVITY -> new LectureActivityComparator();
