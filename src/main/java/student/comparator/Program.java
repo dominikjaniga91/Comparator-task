@@ -13,17 +13,12 @@ import java.util.Scanner;
 
 public class Program {
 
-    public void run() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("chose category: QUIZ, TASK, ACTIVITY, TOTAL");
-        String categoryInput = scanner.nextLine();
+    public void run(String... args) {
 
-        System.out.println("chose category: ASCENDING, DESCENDING");
-        String optionInput = scanner.nextLine();
-
-        Category category = new CategoryReader().read(categoryInput);
-        Option option = new OptionReader().read(optionInput);
-        List<PreAcademyStudent> students = DataLoader.load();
+        String fileName = args[0];
+        Category category = new CategoryReader().read(args[1]);
+        Option option = new OptionReader().read(args[2]);
+        List<PreAcademyStudent> students = DataLoader.load(fileName);
         Sorter.sort(students, category, option);
         DataWriter.write(students);
 
