@@ -11,18 +11,17 @@ import java.util.stream.Collectors;
 
 public class DataLoader {
 
-    private static final String FILE = "students.txt";
     private static final String WORD_SEPARATOR = ";";
 
-    public static List<PreAcademyStudent> load() {
-        List<String> lines = readLinesFromFile();
+    public static List<PreAcademyStudent> load(String fileName) {
+        List<String> lines = readLinesFromFile(fileName);
         return getStudentsList(lines);
     }
 
-    private static List<String> readLinesFromFile() {
+    private static List<String> readLinesFromFile(String fileName) {
         List<String> lines = Collections.emptyList();
         try {
-            lines = Files.readAllLines(Path.of(FILE));
+            lines = Files.readAllLines(Path.of(fileName));
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
