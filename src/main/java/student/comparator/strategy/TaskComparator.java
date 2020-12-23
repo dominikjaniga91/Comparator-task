@@ -4,10 +4,10 @@ import student.comparator.PreAcademyStudent;
 
 import java.util.Comparator;
 
-class Total implements StudentComparator {
+class TaskComparator implements StudentComparator {
 
     @Override
     public Comparator<PreAcademyStudent> get() {
-        return Comparator.naturalOrder();
+       return Comparator.comparing(PreAcademyStudent::taskPoints);
     }
 }

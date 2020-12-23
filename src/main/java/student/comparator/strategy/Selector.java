@@ -6,10 +6,10 @@ public class Selector {
 
     public static StudentComparator select(Category sorter) {
         return switch (sorter) {
-                case QUIZ -> new Quiz();
-                case TASK -> new Task();
-                case ACTIVITY -> new LectureActivity();
-                case TOTAL -> new Total();
+                case QUIZ -> new QuizComparator();
+                case TASK -> new TaskComparator();
+                case ACTIVITY -> new LectureActivityComparator();
+                case TOTAL -> new TotalComparator();
         };
     }
 }

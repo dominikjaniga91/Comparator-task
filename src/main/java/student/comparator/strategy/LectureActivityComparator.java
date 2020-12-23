@@ -4,7 +4,7 @@ import student.comparator.PreAcademyStudent;
 
 import java.util.Comparator;
 
-class LectureActivity implements StudentComparator {
+class LectureActivityComparator implements StudentComparator {
 
     @Override
     public Comparator<PreAcademyStudent> get() {
