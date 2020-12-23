@@ -9,7 +9,7 @@ import student.comparator.util.DataWriter;
 import student.comparator.util.Sorter;
 
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Program {
 
@@ -19,6 +19,12 @@ public class Program {
     private final CategoryReader categoryReader = new CategoryReader();
     private final OptionReader optionReader = new OptionReader();
 
+    /**
+     * Read provided arguments in an array, load students from file
+     * and sort loaded students list. Finally pass a sorted list to a writer.
+     *
+     * @param args the array of starting arguments
+     */
     public void run(String... args) {
 
         String fileName = args[0];

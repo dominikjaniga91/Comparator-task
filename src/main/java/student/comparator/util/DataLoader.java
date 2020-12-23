@@ -13,6 +13,12 @@ public class DataLoader {
 
     private static final String WORD_SEPARATOR = ";";
 
+    /**
+     * Read a string lines from file provided by user
+     *
+     * @param fileName a name of the file with extension
+     * @return list of PreAcademyStudent objects
+     */
     public List<PreAcademyStudent> load(String fileName) {
         List<String> lines = readLinesFromFile(fileName);
         return getStudentsList(lines);

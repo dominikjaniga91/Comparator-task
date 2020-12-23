@@ -16,6 +16,11 @@ public class DataWriter {
 
     private static final String HEADER = "Name\tSurname\tQuizzes\tTasks\tActivities\tTotal\n";
 
+    /**
+     * Write provided list of students to file.
+     *
+     * @param students list of PreAcademyStudent objects
+     */
     public void write(List<PreAcademyStudent> students) {
         String fileName = createFileName();
         Path path = Paths.get(fileName);
