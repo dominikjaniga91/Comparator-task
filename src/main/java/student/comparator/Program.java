@@ -22,17 +22,21 @@ public class Program {
     /**
      * Read provided arguments in an array, load students from file
      * and sort loaded students list. Finally pass a sorted list to a writer.
+     * When user provide only a file name, the program will sort total points ascending
      *
      * @param args the array of starting arguments
      */
     public void run(String... args) {
 
-        String fileName = args[0];
-        Category category = categoryReader.read(args[1]);
-        Option option = optionReader.read(args[2]);
+        String fileName = getArgument(0, args);
+        Category category = categoryReader.read(getArgument(1, args));
+        Option option = optionReader.read(getArgument(2, args));
         List<PreAcademyStudent> students = loader.load(fileName);
         sorter.sort(students, category, option);
         writer.write(students);
+    }
 
+    private String getArgument(int index, String... args) {
+        return args.length <= index + 1 ? args[0] : "";
     }
 }
